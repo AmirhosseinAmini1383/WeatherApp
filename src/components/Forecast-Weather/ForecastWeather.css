@@ -1,0 +1,39 @@
+:root {
+  --BodyBackGround: #c6c6c6e3;
+  --BlueBackGround: #021026;
+  --DarkBlue: #051a33;
+  --LightBlue: #7b98b2;
+  --BlueText: #3e82be;
+  --Blueinfo: #4a6fa1;
+  --Blue: #216396;
+  --Green: #275b5d;
+}
+.ForecastWeather-div {
+  background: var(--DarkBlue);
+  border-radius: 15px;
+  margin-top: 25px;
+  padding: 20px 0px;
+}
+.Current-div {
+  margin-left: 60px;
+}
+.dis-grid-div {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  text-align: center;
+}
+.day {
+  color: var(--BlueText);
+  font-size: 20px;
+}
+.develop {
+  text-align: center;
+  color: var(--Green);
+}
+.develop span {
+  text-decoration: underline;
+}
+.img-status {
+  width: 80px;
+  height: 80px;
+}

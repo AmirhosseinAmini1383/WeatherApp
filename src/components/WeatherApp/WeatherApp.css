@@ -1,0 +1,131 @@
+:root {
+  --BodyBackGround: #c6c6c6e3;
+  --BlueBackGround: #021026;
+  --DarkBlue: #051a33;
+  --LightBlue: #7b98b2;
+  --BlueText: #3e82be;
+  --Blueinfo: #4a6fa1;
+  --Blue: #216396;
+  --Green: #275b5d;
+}
+@font-face {
+  font-family: Vazir;
+  src: url("../../Font/Vazir-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: MYRIADPRO;
+  src: url("../../Font/MYRIADPRO-SEMIBOLD.woff") format("woff");
+}
+* {
+  font-family: MYRIADPRO;
+}
+body {
+  background: var(--BodyBackGround);
+}
+/* container */
+.container {
+  width: 1000px;
+  margin: 0 auto;
+  margin-top: 30px;
+  padding: 20px;
+  border-radius: 15px;
+  background: var(--BlueBackGround);
+}
+/* header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.haed-title {
+  color: var(--BlueText);
+}
+.mood {
+  color: var(--BlueText);
+}
+/* search */
+.search-container {
+  position: relative;
+  width: 100%;
+}
+.search-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 10px;
+  width: 20px;
+  height: 20px;
+}
+.search-input {
+  background: var(--DarkBlue);
+  width: 100%;
+  padding: 10px 30px 10px 40px;
+  box-sizing: border-box;
+  border-radius: 20px;
+  outline: none;
+  border: 0;
+  color: var(--LightBlue);
+  font-family: Vazir;
+}
+.search-input::placeholder {
+  color: var(--LightBlue);
+}
+/* Information */
+.Information-div {
+  background: var(--DarkBlue);
+  border-radius: 15px;
+  margin-top: 25px;
+  padding: 20px 0px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.Info-div {
+  margin-left: 60px;
+}
+.title-weather {
+  color: var(--Blue);
+  margin: 0;
+}
+.city {
+  color: var(--BlueText);
+  font-size: 25px;
+}
+.dis-flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+.temperature {
+  font-size: 80px;
+  margin: 0;
+  margin-left: 30px;
+  color: var(--Blueinfo);
+}
+.Weather {
+  color: var(--LightBlue);
+  font-size: 25px;
+  margin: 0;
+  margin-top: 10px;
+}
+.status-div {
+  margin-right: 250px;
+}
+.status-img {
+  width: 15px;
+  height: 15px;
+}
+.status {
+  font-size: 18px;
+  color: var(--Blueinfo);
+}
+.status-text {
+  font-size: 18px;
+  color: var(--Blueinfo);
+  margin-left: 12px;
+  margin-right: 12px;
+}
+.staus-span {
+  color: var(--BlueText);
+}
