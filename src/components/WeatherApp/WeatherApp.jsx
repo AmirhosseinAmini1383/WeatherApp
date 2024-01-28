@@ -1,18 +1,26 @@
 import React from "react";
 import "./WeatherApp.css";
 import SearchIcon from "../../Icon/Search/search.png";
-import CloudRain from "../../Icon/Weather-Cloud/cloud-with-rain.png";
+import rain from "../../Icon/Weather-Cloud/cloud-with-rain.png";
+// import thunderstorm from "../../Icon/Weather-Cloud/cloud-with-lightning-and-rain.png";
+// import snow from "../../Icon/Weather-Cloud/cloud-with-snow.png";
+// import cloud from "../../Icon/Weather-Cloud/cloud.png";
+// import partlycloudy from "../../Icon/Weather-Cloud/sun-behind-large-cloud.png";
+// import sun from "../../Icon/Weather-Cloud/sun.png";
+// import windy from "../../Icon/Weather-Cloud/windy-weather.png";
 import humidity from "../../Icon/Weather-Staus/humidity.png";
 import pressure from "../../Icon/Weather-Staus/pressure.png";
 import wind from "../../Icon/Weather-Staus/wind.png";
 import ForecastWeather from "../Forecast-Weather/ForecastWeather";
+import PersianDate from "../PersionDate/PersionDate";
 const WeatherApp = () => {
+  // const [cloudMood, setCloudMood] = useState("");
   return (
     <div>
       <div className="container">
         <div className="header">
           <h1 className="haed-title">ReactWeatherApp</h1>
-          <p className="mood">night/light mood</p>
+          <PersianDate />
         </div>
         <div>
           <div className="search-container">
@@ -31,17 +39,17 @@ const WeatherApp = () => {
             <p className="city">Paris</p>
             <div className="dis-flex">
               <div>
-                <img src={CloudRain} alt="RainCloud" />
+                <img src={rain} alt="RainCloud" />
               </div>
               <div>
-                <p className="temperature">38</p>
+                <p className="temperature">38°</p>
               </div>
             </div>
             <p className="Weather">Rainy</p>
           </div>
           <div className="status-div">
             <p className="status">
-              Feels like <span>38</span>
+              Feels like <span>38°</span>
             </p>
             <div>
               <p>

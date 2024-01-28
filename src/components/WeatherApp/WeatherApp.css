@@ -1,5 +1,5 @@
 :root {
-  --BodyBackGround: #c6c6c6e3;
+  --BodyBackGround: #a7b8d0;
   --BlueBackGround: #021026;
   --DarkBlue: #051a33;
   --LightBlue: #7b98b2;
@@ -16,11 +16,9 @@
   font-family: MYRIADPRO;
   src: url("../../Font/MYRIADPRO-SEMIBOLD.woff") format("woff");
 }
-* {
-  font-family: MYRIADPRO;
-}
 body {
   background: var(--BodyBackGround);
+  font-family: MYRIADPRO;
 }
 /* container */
 .container {
@@ -40,7 +38,8 @@ body {
 .haed-title {
   color: var(--BlueText);
 }
-.mood {
+.date {
+  font-family: Vazir;
   color: var(--BlueText);
 }
 /* search */

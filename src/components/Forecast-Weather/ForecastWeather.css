@@ -1,13 +1,3 @@
-:root {
-  --BodyBackGround: #c6c6c6e3;
-  --BlueBackGround: #021026;
-  --DarkBlue: #051a33;
-  --LightBlue: #7b98b2;
-  --BlueText: #3e82be;
-  --Blueinfo: #4a6fa1;
-  --Blue: #216396;
-  --Green: #275b5d;
-}
 .ForecastWeather-div {
   background: var(--DarkBlue);
   border-radius: 15px;
