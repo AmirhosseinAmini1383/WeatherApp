@@ -9,8 +9,10 @@ import partlycloudy from "../../Icon/Weather-Cloud/sun-behind-large-cloud.png";
 import sun from "../../Icon/Weather-Cloud/sun.png";
 import windy from "../../Icon/Weather-Cloud/windy-weather.png";
 import mist from "../../Icon/Weather-Cloud/mist.png";
-import humidity from "../../Icon/Weather-Staus/humidity.png";
 import haze from "../../Icon/Weather-Cloud/haze.png";
+import arrowdown from "../../Icon/Weather-Staus/arrow-down.png";
+import arrowup from "../../Icon/Weather-Staus/arrow-up.png";
+import humidity from "../../Icon/Weather-Staus/humidity.png";
 import pressure from "../../Icon/Weather-Staus/pressure.png";
 import wind from "../../Icon/Weather-Staus/wind.png";
 import ForecastWeather from "../Forecast-Weather/ForecastWeather";
@@ -25,6 +27,7 @@ const WeatherApp = () => {
   const handleGetWeather = (e) => {
     e.preventDefault();
     dispatch(getWeatherInfo(query));
+    console.log(data);
   };
   return (
     <div>
@@ -49,7 +52,7 @@ const WeatherApp = () => {
         </div>
         {loading ? (
           <div className="search-alert">
-            <p>Loading...</p>
+            <p>please wait | Loading...</p>
           </div>
         ) : data.main ? (
           <div className="Information-div">
@@ -100,10 +103,22 @@ const WeatherApp = () => {
               <div>
                 <p>
                   <span>
+                    <img src={arrowup} alt="arrowup" className="status-img" />
+                  </span>{" "}
+                  <span className="status-span">{data.main.temp_max}°</span>{" "}
+                  <span>
+                    <img src={arrowdown} alt="arrowup" className="status-img" />
+                  </span>{" "}
+                  <span className="status-span">{data.main.temp_min}°</span>{" "}
+                </p>
+              </div>
+              <div>
+                <p>
+                  <span>
                     <img src={humidity} alt="humidity" className="status-img" />
                   </span>{" "}
                   <span className="status-text">Humidity</span>{" "}
-                  <span className="staus-span">{data.main.humidity}%</span>
+                  <span className="status-span">{data.main.humidity}%</span>
                 </p>
               </div>
               <div>
@@ -112,7 +127,7 @@ const WeatherApp = () => {
                     <img src={wind} alt="wind" className="status-img" />
                   </span>{" "}
                   <span className="status-text">Wind</span>{" "}
-                  <span className="staus-span">{data.wind.speed}km/h</span>
+                  <span className="status-span">{data.wind.speed}km/h</span>
                 </p>
               </div>
               <div>
@@ -121,7 +136,7 @@ const WeatherApp = () => {
                     <img src={pressure} alt="pressure" className="status-img" />
                   </span>{" "}
                   <span className="status-text">Pressure</span>{" "}
-                  <span className="staus-span">{data.main.pressure}hPa</span>
+                  <span className="status-span">{data.main.pressure}hPa</span>
                 </p>
               </div>
             </div>
