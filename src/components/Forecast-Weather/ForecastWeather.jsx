@@ -12,7 +12,7 @@ const ForecastWeather = () => {
     <div>
       <div className="ForecastWeather-div">
         <div className="Current-div">
-          <h2 className="title-weather">Current Weather</h2>
+          <h2 className="title-weather">Extended Forecast</h2>
         </div>
         <div className="dis-grid-div">
           <div>
