@@ -30,7 +30,7 @@ const PersianDate = () => {
     let finalDate = `${weekDays[m.day()]} ${m.jDate()} ${
       yearMonth[m.jMonth()]
     } ${m.jYear()}`;
-    console.log(finalDate);
+    // console.log(finalDate);
     setDate(finalDate);
     setTime(m.format("HH:mm"));
   }, []);

@@ -128,3 +128,16 @@ body {
 .staus-span {
   color: var(--BlueText);
 }
+.search-alert {
+  background: var(--DarkBlue);
+  padding: 20px 0px;
+  border-radius: 15px;
+  margin-top: 25px;
+  text-align: center;
+  color: var(--LightBlue);
+  font-size: 25px;
+}
+.weather-img {
+  width: 95px;
+  height: 95px;
+}
