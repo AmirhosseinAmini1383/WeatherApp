@@ -1,5 +1,6 @@
 import moment from "moment-jalaali";
 import React, { useEffect, useState } from "react";
+
 const weekDays = [
   "یک شنبه",
   "دو شنبه",
@@ -8,6 +9,7 @@ const weekDays = [
   "پنج شنبه",
   "جمعه",
 ];
+
 const yearMonth = [
   "فروردین",
   "اردیبهشت",
@@ -22,18 +24,28 @@ const yearMonth = [
   "بهمن",
   "اسفند",
 ];
+
 const PersianDate = () => {
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
-  useEffect(() => {
+
+  const updateClock = () => {
     let m = moment();
     let finalDate = `${weekDays[m.day()]} ${m.jDate()} ${
       yearMonth[m.jMonth()]
     } ${m.jYear()}`;
-    // console.log(finalDate);
     setDate(finalDate);
-    setTime(m.format("HH:mm"));
+    setTime(m.format("HH:mm:ss"));
+  };
+
+  useEffect(() => {
+    updateClock();
+    const interval = setInterval(() => {
+      updateClock();
+    }, 1000);
+    return () => clearInterval(interval);
   }, []);
+
   return (
     <div>
       <p className="date">
@@ -42,4 +54,5 @@ const PersianDate = () => {
     </div>
   );
 };
+
 export default PersianDate;

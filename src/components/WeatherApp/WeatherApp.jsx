@@ -19,14 +19,12 @@ import { useDispatch, useSelector } from "react-redux";
 import getWeatherInfo from "../../Redux/Weather/WeatherAcion";
 
 const WeatherApp = () => {
-  // const [cloudMood, setCloudMood] = useState("");
   const { loading, data, error } = useSelector((state) => state);
   const dispatch = useDispatch();
   const [query, setQuery] = useState("");
   const handleGetWeather = (e) => {
     e.preventDefault();
     dispatch(getWeatherInfo(query));
-    console.log(data);
   };
   return (
     <div>
@@ -83,7 +81,7 @@ const WeatherApp = () => {
                         ? `${haze}`
                         : ``
                     }
-                    alt="RainCloud"
+                    alt="WeatherIcon"
                   />
                 </div>
                 <div>
