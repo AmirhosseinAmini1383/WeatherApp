@@ -18,7 +18,8 @@ import wind from "../../Icon/Weather-Staus/wind.png";
 import ForecastWeather from "../Forecast-Weather/ForecastWeather";
 import PersianDate from "../PersionDate/PersionDate";
 import { useDispatch, useSelector } from "react-redux";
-import getWeatherInfo from "../../Redux/Weather/WeatherAcion";
+import { SendWeatherRequest } from "../../Redux/Weather/WeatherAcion";
+// import getWeatherInfo from "../../Redux/Weather/WeatherAcion";
 
 const WeatherApp = () => {
   const { loading, data, error } = useSelector((state) => state);
@@ -26,7 +27,8 @@ const WeatherApp = () => {
   const [query, setQuery] = useState("");
   const handleGetWeather = (e) => {
     e.preventDefault();
-    dispatch(getWeatherInfo(query));
+    // dispatch(getWeatherInfo(query));
+    dispatch(SendWeatherRequest(query));
     console.log(data);
   };
   return (
@@ -79,6 +81,8 @@ const WeatherApp = () => {
                         : data.weather[0].main == "Thunder"
                         ? `${thunderstorm}`
                         : data.weather[0].main == "Mist"
+                        ? `${mist}`
+                        : data.weather[0].main == "Fog"
                         ? `${mist}`
                         : data.weather[0].main == "Haze"
                         ? `${haze}`
