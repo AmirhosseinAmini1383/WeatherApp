@@ -29,7 +29,6 @@ const WeatherApp = () => {
     e.preventDefault();
     // dispatch(getWeatherInfo(query));
     dispatch(SendWeatherRequest(query));
-    console.log(data);
   };
   return (
     <div>
