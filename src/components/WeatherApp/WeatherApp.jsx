@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./WeatherApp.css";
 import SearchIcon from "../../Icon/Search/search.png";
 import rain from "../../Icon/Weather-Cloud/cloud-with-rain.png";
@@ -18,8 +18,8 @@ import wind from "../../Icon/Weather-Staus/wind.png";
 import ForecastWeather from "../Forecast-Weather/ForecastWeather";
 import PersianDate from "../PersionDate/PersionDate";
 import { useDispatch, useSelector } from "react-redux";
-import { SendWeatherRequest } from "../../Redux/Weather/WeatherAcion";
-// import getWeatherInfo from "../../Redux/Weather/WeatherAcion";
+// import { SendWeatherRequest } from "../../Redux/Weather/WeatherAcion";
+import getWeatherInfo from "../../Redux/Weather/WeatherAcion";
 
 const WeatherApp = () => {
   const { loading, data, error } = useSelector((state) => state);
@@ -27,9 +27,13 @@ const WeatherApp = () => {
   const [query, setQuery] = useState("");
   const handleGetWeather = (e) => {
     e.preventDefault();
-    // dispatch(getWeatherInfo(query));
-    dispatch(SendWeatherRequest(query));
+    dispatch(getWeatherInfo(query));
+    // dispatch(SendWeatherRequest(query));
   };
+  const myinput = useRef();
+  useEffect(() => {
+    myinput.current.focus();
+  }, []);
   return (
     <div>
       <div className="container">
@@ -42,6 +46,7 @@ const WeatherApp = () => {
             <img src={SearchIcon} alt="Search icon" className="search-icon" />
             <form onSubmit={handleGetWeather}>
               <input
+                ref={myinput}
                 type="text"
                 placeholder={data.name || "Search..."}
                 className="search-input"
